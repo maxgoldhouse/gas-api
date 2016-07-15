@@ -25,7 +25,6 @@
       {
         var o = {};
         var a = this.serializeArray();
-        console.log('serials '+a)
         $.each(a, function() {
           if (o[this.name] !== undefined) {
             if (!o[this.name].push) {
@@ -41,6 +40,7 @@
       };
         
         $('#gas-api-form').submit(function() {
+        console.log( $( this ).serializeArray() )
         var thedata = JSON.stringify($(this).serializeObject())
         console.log('form submitted: '+thedata);
         var script = document.createElement('script');

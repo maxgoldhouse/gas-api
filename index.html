@@ -5,6 +5,16 @@
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
 </head>
 <body>
+    <form id="gas-api-form">
+         First name:<br>
+  <input type="text" name="firstname"><br>
+  Last name:<br>
+  <input type="text" name="lastname">
+  <input type="hidden" name="email" value="dindi@dindi.net">
+  <input type="hidden" name="goals" value="[["1st Visit",true],["1st Drip",true],["New Website",true]]">
+  <input type="submit" name="send" value="Send This Stuff">
+        
+    </form>
     <!-- include jQuery From google -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script>
@@ -26,10 +36,9 @@
         return o;
       };
         
-        $('#contact-form').submit(function() {
+        $('#gas-api-form').submit(function() {
         var thedata = JSON.stringify($(this).serializeObject())
-        console.log('form submitted');
-        //$('.resulto').text(thedata);
+        console.log('form submitted: '+thedata);
         var script = document.createElement('script');
         script.src = 'https://script.google.com/macros/s/AKfycbzCW2_f0QrC3qq3KG_-GGcg_msIpHGyOPz9izaqtLGxbLMFbPk/exec?data='+thedata;
         document.body.appendChild(script);

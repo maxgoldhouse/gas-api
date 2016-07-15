@@ -41,7 +41,8 @@
         
         $('#gas-api-form').submit(function() {
         console.log( $( this ).serializeArray() )
-        var thedata = JSON.stringify($(this).serializeObject())
+        var thedata = JSON.stringify($(this).serializeObject()).replace(/:\"true\"/g, ':true')
+        
         console.log('form submitted: '+thedata);
         var script = document.createElement('script');
         script.src = 'https://script.google.com/macros/s/AKfycbzCW2_f0QrC3qq3KG_-GGcg_msIpHGyOPz9izaqtLGxbLMFbPk/exec?data='+thedata;

@@ -55,6 +55,13 @@
       function returnhandler(dada){
           //delete dada._links
           for(i in dada){
+             if(i !== null && typeof i === 'object'){
+                 for(j in i){
+                     console.log(j+' : '+i[j])
+                 }
+        
+             }
+         }else{
           console.log(i + ' : ' +dada[i])
           }
       };

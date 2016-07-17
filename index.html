@@ -19,6 +19,8 @@
   <input type="submit" name="send" value="Send This Stuff">
         
     </form>
+    
+    <div id="return"></div>
     <!-- include jQuery From google -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script>
@@ -52,22 +54,25 @@
         return false;
 
       })
-      function js_traverse(o) {
+      function js_traverse(o,output) {
     var type = typeof o 
     if (type == "object") {
         for (var key in o) {
-            console.log("key: ", key)
+            output = output + key +':')
             js_traverse(o[key])
         }
     } else {
-        console.log(o)
+        output = output + o +'<br/>'
     }
+    return output;
 }
       
       
       function returnhandler(dada){
           //delete dada._links
-          js_traverse(dada);
+          var output
+          var htmlout = js_traverse(dada, output);
+          document.getElementById("content").innerHTML = htmlout;
           /*for(i in dada){
           console.log(i + ' : ' +dada[i])
           }

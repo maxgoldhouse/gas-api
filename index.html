@@ -55,13 +55,13 @@
       function returnhandler(dada){
           //delete dada._links
           for(i in dada){
-             if(i !== null && typeof i === 'object'){
-                 for(j in i){
-                     console.log(j+' : '+i[j])
-                 }
-         }else{
           console.log(i + ' : ' +dada[i])
           }
+          for(j in dada.interests){
+              console.log(j + ':'+dada.interests[j])
+          }
+          for(k in dada.merge_fields){
+              console.log(k + ':'+dada.merge_fields[k])
           }
       };
       

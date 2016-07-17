@@ -1,0 +1,96 @@
+{
+  "id": "c27bc7b0e192d5b4b4d934b1794f4074",
+  "email_address": "dindi@dindi.net",
+  "unique_email_id": "9eab928ca2",
+  "email_type": "html",
+  "status": "subscribed",
+  "merge_fields": {
+    "FNAME": "Dindi",
+    "LNAME": "Net",
+    "DOWNLOAD": "",
+    "DRIP": "",
+    "SCORE": 10
+  },
+  "interests": {
+    "4ea980887a": true,
+    "df7eb903a6": true,
+    "2bd643478c": false,
+    "8a9d64103b": false,
+    "1ea965b06a": true,
+    "7f4b5ec06f": false,
+    "a3aa3eab08": false,
+    "c2de23608a": false
+  },
+  "stats": {
+    "avg_open_rate": 0,
+    "avg_click_rate": 0
+  },
+  "ip_signup": "92.234.223.80",
+  "timestamp_signup": "2016-07-13T10:02:21+00:00",
+  "ip_opt": "92.234.223.80",
+  "timestamp_opt": "2016-07-13T10:02:37+00:00",
+  "member_rating": 2,
+  "last_changed": "2016-07-17T10:18:50+00:00",
+  "language": "en",
+  "vip": false,
+  "email_client": "",
+  "location": {
+    "latitude": 0,
+    "longitude": 0,
+    "gmtoff": 0,
+    "dstoff": 0,
+    "country_code": "",
+    "timezone": ""
+  },
+  "list_id": "f7178cc3ff",
+  "_links": [
+    {
+      "rel": "self",
+      "href": "https://us1.api.mailchimp.com/3.0/lists/f7178cc3ff/members/c27bc7b0e192d5b4b4d934b1794f4074",
+      "method": "GET",
+      "targetSchema": "https://us1.api.mailchimp.com/schema/3.0/Lists/Members/Instance.json"
+    },
+    {
+      "rel": "parent",
+      "href": "https://us1.api.mailchimp.com/3.0/lists/f7178cc3ff/members",
+      "method": "GET",
+      "targetSchema": "https://us1.api.mailchimp.com/schema/3.0/Lists/Members/Collection.json",
+      "schema": "https://us1.api.mailchimp.com/schema/3.0/CollectionLinks/Lists/Members.json"
+    },
+    {
+      "rel": "update",
+      "href": "https://us1.api.mailchimp.com/3.0/lists/f7178cc3ff/members/c27bc7b0e192d5b4b4d934b1794f4074",
+      "method": "PATCH",
+      "schema": "https://us1.api.mailchimp.com/schema/3.0/Lists/Members/Instance.json"
+    },
+    {
+      "rel": "upsert",
+      "href": "https://us1.api.mailchimp.com/3.0/lists/f7178cc3ff/members/c27bc7b0e192d5b4b4d934b1794f4074",
+      "method": "PUT",
+      "schema": "https://us1.api.mailchimp.com/schema/3.0/Lists/Members/Instance.json"
+    },
+    {
+      "rel": "delete",
+      "href": "https://us1.api.mailchimp.com/3.0/lists/f7178cc3ff/members/c27bc7b0e192d5b4b4d934b1794f4074",
+      "method": "DELETE"
+    },
+    {
+      "rel": "activity",
+      "href": "https://us1.api.mailchimp.com/3.0/lists/f7178cc3ff/members/c27bc7b0e192d5b4b4d934b1794f4074/activity",
+      "method": "GET",
+      "targetSchema": "https://us1.api.mailchimp.com/schema/3.0/Lists/Members/Activity/Collection.json"
+    },
+    {
+      "rel": "goals",
+      "href": "https://us1.api.mailchimp.com/3.0/lists/f7178cc3ff/members/c27bc7b0e192d5b4b4d934b1794f4074/goals",
+      "method": "GET",
+      "targetSchema": "https://us1.api.mailchimp.com/schema/3.0/Lists/Members/Goals/Collection.json"
+    },
+    {
+      "rel": "notes",
+      "href": "https://us1.api.mailchimp.com/3.0/lists/f7178cc3ff/members/c27bc7b0e192d5b4b4d934b1794f4074/notes",
+      "method": "GET",
+      "targetSchema": "https://us1.api.mailchimp.com/schema/3.0/Lists/Members/Notes/Collection.json"
+    }
+  ]
+}

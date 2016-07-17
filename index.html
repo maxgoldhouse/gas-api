@@ -59,7 +59,7 @@
     if (type == "object") {
         for (var key in o) {
             output = output + key +':'
-            js_traverse(o[key])
+            js_traverse(o[key],output)
         }
     } else {
         output = output + o +'<br/>'

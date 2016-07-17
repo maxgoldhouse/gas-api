@@ -53,6 +53,7 @@
 
       })
       function returnhandler(dada){
+          delete dada._links
           for(i in dada){
           console.log(i + ' : ' +dada[i])
           }

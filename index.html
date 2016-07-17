@@ -41,12 +41,13 @@
       };
         
         $('#gas-api-form').submit(function() {
-        console.log( $( this ).serializeArray() )
+        //console.log( $( this ).serializeArray() )
         var thedata = JSON.stringify($(this).serializeObject()).replace(/:\"true\"/g, ':true')
         
         console.log('form submitted: '+thedata);
         var script = document.createElement('script');
         script.src = 'https://script.google.com/macros/s/AKfycbzCW2_f0QrC3qq3KG_-GGcg_msIpHGyOPz9izaqtLGxbLMFbPk/exec?data='+thedata+'&prefix=returnhandler';
+        console.log('the script: '+script.src)
         document.body.appendChild(script);
         return false;
 

@@ -58,7 +58,7 @@
     var type = typeof o 
     if (type == "object") {
         for (var key in o) {
-            output = output + key +':')
+            output = output + key +':'
             js_traverse(o[key])
         }
     } else {

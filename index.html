@@ -54,25 +54,22 @@
         return false;
 
       })
-      function js_traverse(o,output) {
+      function js_traverse(o) {
     var type = typeof o 
     if (type == "object") {
         for (var key in o) {
-            output = output + key +':'
-            js_traverse(o[key],output)
+           console.log(key +':')
+            js_traverse(o[key])
         }
     } else {
-        output = output + o +'<br/>'
+        console.log(o)
     }
-    return output;
 }
       
       
       function returnhandler(dada){
           //delete dada._links
-          var output
-          var htmlout = js_traverse(dada, output);
-          document.getElementById("return").innerHTML = htmlout;
+          js_traverse(dada);
           /*for(i in dada){
           console.log(i + ' : ' +dada[i])
           }

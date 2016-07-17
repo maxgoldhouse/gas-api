@@ -46,11 +46,15 @@
         
         console.log('form submitted: '+thedata);
         var script = document.createElement('script');
-        script.src = 'https://script.google.com/macros/s/AKfycbzCW2_f0QrC3qq3KG_-GGcg_msIpHGyOPz9izaqtLGxbLMFbPk/exec?data='+thedata;
+        script.src = 'https://script.google.com/macros/s/AKfycbzCW2_f0QrC3qq3KG_-GGcg_msIpHGyOPz9izaqtLGxbLMFbPk/exec?data='+thedata='&prefix=do';
         document.body.appendChild(script);
         return false;
 
       });
+      function do(dada){
+          consol-.log(dada)
+      }
+      }
     </script>
 </body>
 </html>

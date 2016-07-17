@@ -54,9 +54,8 @@
         return false;
 
       })
-      function Iterate(data)
-{
-    jQuery.each(data, function (index, value) {
+      function Iterate(data){
+        jQuery.each(data, function (index, value) {
         if (typeof value == 'object') {
             //alert("Object " + index);
             Iterate(value);
@@ -69,9 +68,10 @@
       
       
       function returnhandler(dada){
-          Iterate(dada)
-          //delete dada._links
-          //js_traverse(dada);
+          Iterate(dada);
+
+      };
+
           /*for(i in dada){
           console.log(i + ' : ' +dada[i])
           }
@@ -81,7 +81,6 @@
           for(k in dada.merge_fields){
               console.log(k + ':'+dada.merge_fields[k])
           }*/
-      };
       
     </script>
 </body>

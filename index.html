@@ -52,9 +52,23 @@
         return false;
 
       })
+      function js_traverse(o) {
+    var type = typeof o 
+    if (type == "object") {
+        for (var key in o) {
+            console.log("key: ", key)
+            js_traverse(o[key])
+        }
+    } else {
+        console.log(o)
+    }
+}
+      
+      
       function returnhandler(dada){
           //delete dada._links
-          for(i in dada){
+          js_traverse(dada);
+          /*for(i in dada){
           console.log(i + ' : ' +dada[i])
           }
           for(j in dada.interests){
@@ -62,7 +76,7 @@
           }
           for(k in dada.merge_fields){
               console.log(k + ':'+dada.merge_fields[k])
-          }
+          }*/
       };
       
     </script>

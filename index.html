@@ -53,7 +53,9 @@
 
       })
       function returnhandler(dada){
-          console.log(dada.merge_fields)
+          for(i in dada.merge_fields){
+          console.log(dada.merge_fields(i))
+          }
       };
       
     </script>

@@ -32,15 +32,14 @@
             }
         }
     }
-     var getscripturl= GetQueryStringParams('url')+'?from='+GetQueryStringParams('from')+'&email='+GetQueryStringParams('email')  
+     var getscripturl= GetQueryStringParams('url')+'?from='+GetQueryStringParams('from')+'&email='+GetQueryStringParams('email')+'&prefix=returnhandler'
      EMAILADDRESS = GetQueryStringParams('email')
      document.getElementById("email").innerHTML = EMAILADDRESS
      console.log(getscripturl)
      /* use getscripturl as source for script tag */
-
-  var s = document.createElement( 'script' );
-  s.setAttribute( 'src', getscripturl );
-  document.body.appendChild( s );
+  var script = document.createElement('script');
+  script.src = getscripturl;
+  document.body.appendChild(script);
 
 
 /* Will require a callback function to display the returned message from google script */

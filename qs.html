@@ -11,14 +11,14 @@
   <body>
   <div id="container">
     <div>remove  <span id="email"></span> from message sequence</div>
-    <div><button  id="removenow">Remove Now</button> <a href="https://www.maxgoldhouse.com"><button>Cancel</button></a></div>
+    <div><button  onclick="removeitnow()">Remove Now</button> <a href="https://www.maxgoldhouse.com"><button>Cancel</button></a></div>
     
     <!--<a href="https://script.google.com/macros/s/AKfycbzCW2_f0QrC3qq3KG_-GGcg_msIpHGyOPz9izaqtLGxbLMFbPk/exec?from=unsubspark&email=<?= data.email ?>">Unsubscribe <?= data.email ?> Now</a> -->
      </div>
     <script>
     
     /* show email address and buttons to remove or to cancel */
-     var EMAILADDRESS = ""
+
       
     function GetQueryStringParams(sParam){
         var sPageURL = window.location.search.substring(1);
@@ -32,14 +32,16 @@
             }
         }
     }
-     var getscripturl= GetQueryStringParams('url')+'?from='+GetQueryStringParams('from')+'&email='+GetQueryStringParams('email')+'&prefix=returnhandler'
-     EMAILADDRESS = GetQueryStringParams('email')
+     var SCRIPTURL= GetQueryStringParams('url')+'?from='+GetQueryStringParams('from')+'&email='+GetQueryStringParams('email')+'&prefix=returnhandler'
+     var EMAILADDRESS = GetQueryStringParams('email')
      document.getElementById("email").innerHTML = EMAILADDRESS
      console.log(getscripturl)
      /* use getscripturl as source for script tag */
+function removeitnow(){
   var script = document.createElement('script');
-  script.src = getscripturl;
+  script.src = SCRIPTURL;
   document.body.appendChild(script);
+}
 
 
 /* Will require a callback function to display the returned message from google script */

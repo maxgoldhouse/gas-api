@@ -15,7 +15,7 @@
     
     <!--<a href="https://script.google.com/macros/s/AKfycbzCW2_f0QrC3qq3KG_-GGcg_msIpHGyOPz9izaqtLGxbLMFbPk/exec?from=unsubspark&email=<?= data.email ?>">Unsubscribe <?= data.email ?> Now</a> -->
      </div>
-    <script>
+<script>
     
     /* show email address and buttons to remove or to cancel */
 
@@ -32,10 +32,11 @@
             }
         }
     }
-     var SCRIPTURL= GetQueryStringParams('url')+'?from='+GetQueryStringParams('from')+'&email='+GetQueryStringParams('email')+'&prefix=returnhandler'
-     var EMAILADDRESS = GetQueryStringParams('email')
-     document.getElementById("email").innerHTML = EMAILADDRESS
-     console.log(SCRIPTURL)
+    
+var SCRIPTURL= GetQueryStringParams('url')+'?from='+GetQueryStringParams('from')+'&email='+GetQueryStringParams('email')+'&prefix=returnhandler'
+var EMAILADDRESS = GetQueryStringParams('email')
+document.getElementById("email").innerHTML = EMAILADDRESS
+console.log(SCRIPTURL)
      /* use getscripturl as source for script tag */
 function removeitnow(){
   var script = document.createElement('script');

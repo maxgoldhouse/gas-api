@@ -7,6 +7,8 @@
     </style>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script>
+    
+    /* show email address and buttons to remove or to cancel */
       
      function GetQueryStringParams(sParam)
 {
@@ -32,17 +34,26 @@
 
 /* Will require a callback function to display the returned message from google script */
      
-     
-     */
+      function returnhandler(dada){
+          //delete dada._links
+          for(i in dada){
+             if(i !== null && typeof i === 'object'){
+                 for(j in i){
+                     console.log(j+' : '+i[j])
+                 }
+         }else{
+          console.log(i + ' : ' +dada[i])
+          }
+          }
+      };
         
     </script>
   </head>
   <body>
   <div id="container">
-    <div id="url"></div>
-    <div id="from"></div>
-    <div id="email"></div>
-
+    <div>remove  <span id="email"></span> from message sequence</div>
+    <div><button  id="removenow">Remove Now</button> <button>Cancel</button></div>
+    
     <!--<a href="https://script.google.com/macros/s/AKfycbzCW2_f0QrC3qq3KG_-GGcg_msIpHGyOPz9izaqtLGxbLMFbPk/exec?from=unsubspark&email=<?= data.email ?>">Unsubscribe <?= data.email ?> Now</a> -->
      </div>
   </body>

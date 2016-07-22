@@ -23,14 +23,14 @@
 }
      var getscripturl= GetQueryStringParams('url')+'?from='+GetQueryStringParams('from')+'&email='+GetQueryStringParams('email')  
      console.log(getscripturl)
-     /* use getscripturl as source for script tag
-     function addScript( src ) {
-  var s = document.createElement( 'script' );
-  s.setAttribute( 'src', src );
-  document.body.appendChild( s );
-}
+     /* use getscripturl as source for script tag */
 
-Will require a callback function to display the returned message from google script
+  var s = document.createElement( 'script' );
+  s.setAttribute( 'src', getscripturl );
+  document.body.appendChild( s );
+
+
+/* Will require a callback function to display the returned message from google script */
      
      
      */

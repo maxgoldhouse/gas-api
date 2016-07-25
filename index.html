@@ -2,7 +2,7 @@
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
 </head>
 <body>
-<form id="gas-api-form"></form>
+<form accept-charset="UTF-8" action="" method=""></form>
 First name:<br>
 <input type="text" name="firstname"><br>
 Last name:<br>
@@ -43,7 +43,7 @@ Last name:<br>
             return o;
     };
 
-    $('#gas-api-form').submit(function() {
+    $('form').submit(function() {
             var thedata = JSON.stringify($(this).serializeObject())
             console.log('The Data = '+thedata)
             var script = document.createElement('script');

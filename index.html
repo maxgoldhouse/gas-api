@@ -22,7 +22,7 @@ Last name:<br>
 <div id="techsmith-snagitchrome-extension"></div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 <script>
-    function returned(dada){
+    function returning(dada){
         document.getElementById("returned").innerHTML = dada
     };
 
@@ -48,7 +48,7 @@ Last name:<br>
             var thedata = JSON.stringify($(this).serializeObject())
             console.log('The Data = '+thedata)
             var script = document.createElement('script');
-            script.src = 'https://script.google.com/macros/s/AKfycbzCW2_f0QrC3qq3KG_-GGcg_msIpHGyOPz9izaqtLGxbLMFbPk/exec?from=sendwithus&&prefix=returned&data='+thedata;
+            script.src = 'https://script.google.com/macros/s/AKfycbzCW2_f0QrC3qq3KG_-GGcg_msIpHGyOPz9izaqtLGxbLMFbPk/exec?from=sendwithus&&prefix=returning&data='+thedata;
             document.body.appendChild(script);
             return false;
     });

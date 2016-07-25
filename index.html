@@ -50,7 +50,7 @@ Last name:<br>
             var thedata = JSON.stringify($(this).serializeObject())
             console.log('The Data = '+thedata)
             var script = document.createElement('script');
-            script.src = 'https://script.google.com/macros/s/AKfycbzCW2_f0QrC3qq3KG_-GGcg_msIpHGyOPz9izaqtLGxbLMFbPk/exec?data='+thedata;
+            script.src = 'https://script.google.com/macros/s/AKfycbzCW2_f0QrC3qq3KG_-GGcg_msIpHGyOPz9izaqtLGxbLMFbPk/exec?prefix=returning&data='+thedata;
             document.body.appendChild(script);
             return false;
     });

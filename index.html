@@ -13,6 +13,7 @@ Last name:<br>
 <input type="hidden" name="join-list" value="BlackBox">
   <input type="hidden" name="join-drip" value="Welcome">
   <input type="hidden" name="milestone-on" value="1st Visit">
+  <input type="hidden" name="from" value="webform">
 <input type="submit" name="send" value="Send This Stuff">
 </form>
 
@@ -49,7 +50,7 @@ Last name:<br>
             var thedata = JSON.stringify($(this).serializeObject())
             console.log('The Data = '+thedata)
             var script = document.createElement('script');
-            script.src = 'https://script.google.com/macros/s/AKfycbzCW2_f0QrC3qq3KG_-GGcg_msIpHGyOPz9izaqtLGxbLMFbPk/exec?from=sendwithus&&prefix=returning&data='+thedata;
+            script.src = 'https://script.google.com/macros/s/AKfycbzCW2_f0QrC3qq3KG_-GGcg_msIpHGyOPz9izaqtLGxbLMFbPk/exec?data='+thedata;
             document.body.appendChild(script);
             return false;
     });

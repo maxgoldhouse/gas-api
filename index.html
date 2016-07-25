@@ -14,6 +14,18 @@ Last name:<br>
   <input type="hidden" name="milestone-on" value="1st Visit">
 <input type="submit" name="send" value="Send This Stuff">
 </form>
+
+<div id="returned"> </div>
 <div id="results"></div>
 
-<div id="techsmith-snagitchrome-extension"></div></body></html>
+<div id="techsmith-snagitchrome-extension"></div>
+
+<script>
+          function returnhandler(dada){
+          //delete dada._links
+document.getElementById("returned").innerHTML = dada
+      };
+    </script>
+</script>
+
+</body></html>

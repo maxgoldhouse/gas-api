@@ -33,10 +33,10 @@ Last name:<br>
          //var arrstr
   for (i in dada){
       if(Array.isArray(dada[i])){
-          console.log(i+':' + JSON.stringify(dada[i]))
+          jsonarrdada.push('"'+i+'":' + JSON.stringify(dada[i]))
           for(j in dada[i]){
               console.log('"'+j+'"' + ' : '+dada[i][j])
-              jsonarrdada.push('"'+j+'"' + ' : '+dada[i][j]);
+              //jsonarrdada.push('"'+j+'"' + ' : '+dada[i][j]);
           }
       }
       else{

@@ -30,9 +30,15 @@ Last name:<br>
         document.getElementById("results").innerHTML = dada.joinList + ' : ' + dada.joinDrip + ' : ' + dada.milestoneOn
         dada = JSON.parse(dada)
          var jsonarrdada = Array();
+         var arrstr
   for (i in dada){
+      arrstr=""
       if(Array.isArray(dada[i])){
-         console.log('"'+i+'":['+dada[i].join(',')+']'); 
+          for(j in data[i]){
+              arrstr = arrstr+data[i][j]
+          }  
+          console.log(arrstr)
+         //console.log('"'+i+'":['+dada[i].join(',')+']'); 
       }
 
     jsonarrdada.push('"'+i+'":"'+dada[i]+'"'); 

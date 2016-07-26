@@ -33,12 +33,15 @@ Last name:<br>
          //var arrstr
   for (i in dada){
       if(Array.isArray(dada[i])){
-          console.log('We have an array at :'+i+' = ' + JSON.stringify(dada[i]))
+          console.log(i+':' + JSON.stringify(dada[i]))
           for(j in dada[i]){
-              console.log(j + ' : '+dada[i][j])
+              console.log('"'+j='"' + ' : '+dada[i][j])
+              jsonarrdada.push('"'+j='"' + ' : '+dada[i][j]);
           }
       }
+      else{
     jsonarrdada.push('"'+i+'":"'+dada[i]+'"'); 
+      }
   }
   var data = '{"interests": {'+jsonarrdada.join(',')+'}}';
   console.log("data: "+data)

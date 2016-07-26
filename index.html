@@ -32,6 +32,9 @@ Last name:<br>
          var jsonarrdada = Array();
          //var arrstr
   for (i in dada){
+      if(Array.isArray(dada[i])){
+          console.log('we have an array at :'+i)
+      }
     jsonarrdada.push('"'+i+'":"'+dada[i]+'"'); 
   }
   var data = '{"interests": {'+jsonarrdada.join(',')+'}}';

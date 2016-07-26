@@ -26,7 +26,14 @@ Last name:<br>
 <script>
     function onreturn(dada){
         //var returnedjson = JSON.parse(dada);
+        
         document.getElementById("results").innerHTML = dada.joinList + ' : ' + dada.joinDrip + ' : ' + dada.milestoneOn
+         var jsonarrdada = Array();
+  for (i in dada){
+    jsonarrdada.push('"'+i+'":"'+dada[i]+'"'); 
+}
+  var data = '{"interests": {'+jsonarrInterests.join(',')+'}}';
+  console.log("data: "+data)
     };
 
     $.fn.serializeObject = function()

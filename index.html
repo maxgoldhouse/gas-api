@@ -25,7 +25,7 @@ Last name:<br>
 <script>
     function onreturn(dada){
         //var returnedjson = JSON.parse(dada);
-        document.getElementById("results").innerHTML = dada
+        document.getElementById("results").innerHTML = JSON.stringify(dada)
     };
 
     $.fn.serializeObject = function()

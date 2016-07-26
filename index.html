@@ -28,7 +28,7 @@ Last name:<br>
         //var returnedjson = JSON.parse(dada);
         
         document.getElementById("results").innerHTML = dada.joinList + ' : ' + dada.joinDrip + ' : ' + dada.milestoneOn
-        dada = JSON.stringify(dada)
+        dada = JSON.parse(dada)
          var jsonarrdada = Array();
   for (i in dada){
     jsonarrdada.push('"'+i+'":"'+dada[i]+'"'); 

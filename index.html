@@ -32,13 +32,13 @@ Last name:<br>
          var jsonarrdada = Array();
   for (i in dada){
       if(Array.isArray(dada[i])){
-         jsonarrdada.push('"'+i+'":['+dada[i].join(',')+"]'); 
+         jsonarrdada.push('"'+i+'":['+dada[i].join(',')+']'); 
       }
       else
       {
     jsonarrdada.push('"'+i+'":"'+dada[i]+'"'); 
       }
-}
+  }
   var data = '{"interests": {'+jsonarrdada.join(',')+'}}';
   console.log("data: "+data)
     };

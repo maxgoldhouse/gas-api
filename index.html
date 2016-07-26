@@ -33,7 +33,7 @@ Last name:<br>
          //var arrstr
   for (i in dada){
       if(Array.isArray(dada[i])){
-          console.log('We have an array at :'+i+' = '+dada[i])
+          console.log('We have an array at :'+i+' = ' + JSON.stringify(dada[i]))
           for(j in dada[i]){
               console.log(j + ' : '+dada[i][j])
           }

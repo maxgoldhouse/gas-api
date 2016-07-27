@@ -35,7 +35,7 @@ function onreturn(dada){
           for (i in dada){
 
               if(dada[i].length > 1){
-                  console.log('x : '+dada[i])
+                  console.log('x : '+dada[i].length)
                   jsonarrdada.push('"'+i+'":'+JSON.stringify(dada[i].split(',')))
                   console.log('"'+i+'":'+JSON.stringify(dada[i].split(',')))
               }

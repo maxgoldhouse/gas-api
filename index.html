@@ -47,7 +47,8 @@ Last name:<br>
   var data = '{'+jsonarrdada.join(',')+'}';
   console.log("data: "+data)
   objdata = JSON.parse(data)
-  for( k in objdata.interests.milestoneOn){
+  //for( k in objdata.interests.milestoneOn){
+  for( k in objdata.milestoneOn){
   //console.log(k+':'+objdata.interests.milestoneOn[k])
    console.log(k+':'+objdata.interests.milestoneOn[k])
   }

@@ -41,16 +41,16 @@ function onreturn(dada){
                       subjsonarrdada.push('"'+dada[i][j]+'"')
                   }
                   jsonarrdada.push('"'+i+'":['+subjsonarrdada.join(',')+']')
-                  console.log('"'+i+'":['+JSON.stringify(subjsonarrdada.join(','))+']')
+                  //console.log('"'+i+'":['+JSON.stringify(subjsonarrdada.join(','))+']')
               }
               else{
             jsonarrdada.push('"'+i+'":"'+dada[i]+'"');
-            console.log('"'+i+'":"'+dada[i]+'"');
+            //console.log('"'+i+'":"'+dada[i]+'"');
               }
           }
 
   var data = '{'+jsonarrdada.join(',')+'}';
-  //console.log("data: "+data)
+  console.log("data: "+data)
   objdata = JSON.parse(data)
 
   for(i in objdata){

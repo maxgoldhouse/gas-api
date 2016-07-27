@@ -40,7 +40,7 @@ function onreturn(dada){
                       //console.log('"'+j+'"' + ' : '+dada[i][j])
                       subjsonarrdada.push('"'+dada[i][j]+'"')
                   }
-                  jsonarrdada.push('"'+i+'":['+subjsonarrdada.join(',')+']')
+                  jsonarrdada.push('"'+i+'":['+JSON.stringify(subjsonarrdada.join(','))+']')
                   //console.log('"'+i+'":['+JSON.stringify(subjsonarrdada.join(','))+']')
               }
               else{

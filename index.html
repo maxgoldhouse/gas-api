@@ -38,7 +38,7 @@ function onreturn(dada){
               if(Array.isArray(dada[i])){
                   for(j in dada[i]){
                       //console.log('"'+j+'"' + ' : '+dada[i][j])
-                      subjsonarrdada.push('"'=dada[i][j]+'"')
+                      subjsonarrdada.push('"'+dada[i][j]+'"')
                   }
                   jsonarrdada.push('"'+i+'":['+subjsonarrdada.join(',')+']')
                   console.log('"'+i+'":['+subjsonarrdada.join(',')+']')

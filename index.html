@@ -33,13 +33,13 @@ function onreturn(dada){
         document.getElementById("results").innerHTML = JSON.stringify(dada)//dada.joinList + ' : ' + dada.joinDrip + ' : ' + dada.milestoneOn
          var jsonarrdada = Array();
           for (i in dada){
+              console.log('x : '+dada[i])
               if(dada[i].indexOf(',') > -1){
                   jsonarrdada.push('"'+i+'":'+JSON.stringify(dada[i].split(',')))
                   console.log('"'+i+'":'+JSON.stringify(dada[i].split(',')))
               }
               else{
-            //jsonarrdada.push('"'+i+'":"'+dada[i]+'"');
-            jsonarrdada.push('"'+i+'":'+JSON.stringify(dada[i].split(',')))
+               jsonarrdada.push('"'+i+'":"'+dada[i]+'"');
               }
           }
 

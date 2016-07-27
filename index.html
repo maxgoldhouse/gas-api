@@ -35,24 +35,17 @@ function onreturn(dada){
          var subjsonarrdada = Array();
           for (i in dada){
               subjsonarrdada = []
-              if(Array.isArray(dada[i])){
-                  console.log('da: '+dada[i])
-                  //for(j in dada[i]){
-                      ////console.log('"'+j+'"' + ' : '+dada[i][j])
-                      //subjsonarrdada.push(JSON.stringify('"'+dada[i][j]+'"'))
-                  //}
-                  //for(k in )
-                  //jsonarrdada.push('"'+i+'":['+subjsonarrdada.join(',')+']')
-                  //console.log('"'+i+'":['+JSON.stringify(subjsonarrdada.join(','))+']')
+              if(dada[i].indexOf(',') > -1){
+                  jsonarrdada.push('"'+i+'":"'+JSON.stringify(dada[i].split(',')))
               }
               else{
             jsonarrdada.push('"'+i+'":"'+dada[i]+'"');
-            console.log('"'+i+'":"'+JSON.stringify(dada[i])+'"');
+            console.log('"'+i+'":"'+dada[i]+'"');
               }
           }
 
   var data = '{'+jsonarrdada.join(',')+'}';
-  //console.log("data: "+data)
+  console.log("data: "+data)
   objdata = JSON.parse(data)
 
   for(i in objdata){

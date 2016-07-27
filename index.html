@@ -36,12 +36,13 @@ function onreturn(dada){
           for (i in dada){
               subjsonarrdada = []
               if(Array.isArray(dada[i])){
-                  for(j in dada[i]){
-                      //console.log('"'+j+'"' + ' : '+dada[i][j])
-                      subjsonarrdada.push(JSON.stringify('"'+dada[i][j]+'"'))
-                  }
+                  console.log(dada[i])
+                  //for(j in dada[i]){
+                      ////console.log('"'+j+'"' + ' : '+dada[i][j])
+                      //subjsonarrdada.push(JSON.stringify('"'+dada[i][j]+'"'))
+                  //}
                   //for(k in )
-                  jsonarrdada.push('"'+i+'":['+subjsonarrdada.join(',')+']')
+                  //jsonarrdada.push('"'+i+'":['+subjsonarrdada.join(',')+']')
                   //console.log('"'+i+'":['+JSON.stringify(subjsonarrdada.join(','))+']')
               }
               else{
@@ -51,7 +52,7 @@ function onreturn(dada){
           }
 
   var data = '{'+jsonarrdada.join(',')+'}';
-  console.log("data: "+data)
+  //console.log("data: "+data)
   objdata = JSON.parse(data)
 
   for(i in objdata){

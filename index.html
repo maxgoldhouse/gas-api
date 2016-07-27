@@ -32,9 +32,7 @@ Last name:<br>
 function onreturn(dada){
         document.getElementById("results").innerHTML = JSON.stringify(dada)//dada.joinList + ' : ' + dada.joinDrip + ' : ' + dada.milestoneOn
          var jsonarrdada = Array();
-         var subjsonarrdada = Array();
           for (i in dada){
-              subjsonarrdada = []
               if(dada[i].indexOf(',') > -1){
                   jsonarrdada.push('"'+i+'":'+JSON.stringify(dada[i].split(',')))
               }

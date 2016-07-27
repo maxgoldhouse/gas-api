@@ -38,7 +38,8 @@ function onreturn(dada){
                   console.log('"'+i+'":'+JSON.stringify(dada[i].split(',')))
               }
               else{
-            jsonarrdada.push('"'+i+'":"'+dada[i]+'"');
+            //jsonarrdada.push('"'+i+'":"'+dada[i]+'"');
+            jsonarrdada.push('"'+i+'":'+JSON.stringify(dada[i].split(',')))
               }
           }
 

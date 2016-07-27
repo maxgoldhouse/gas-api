@@ -43,7 +43,8 @@ Last name:<br>
     jsonarrdada.push('"'+i+'":"'+dada[i]+'"'); 
       }
   }
-  var data = '{"interests": {'+jsonarrdada.join(',')+'}}';
+  //var data = '{"interests": {'+jsonarrdada.join(',')+'}}';
+  var data = '{'+jsonarrdada.join(',')+'}';
   console.log("data: "+data)
   objdata = JSON.parse(data)
   for( k in objdata.interests.milestoneOn){

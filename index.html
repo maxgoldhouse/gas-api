@@ -36,7 +36,7 @@ function onreturn(dada){
           for (i in dada){
               subjsonarrdada = []
               if(dada[i].indexOf(',') > -1){
-                  jsonarrdada.push('"'+i+'":"'+JSON.stringify(dada[i].split(',')))
+                  jsonarrdada.push('"'+i+'":'+JSON.stringify(dada[i].split(',')))
               }
               else{
             jsonarrdada.push('"'+i+'":"'+dada[i]+'"');

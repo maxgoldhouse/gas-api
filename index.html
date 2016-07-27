@@ -34,27 +34,29 @@ function onreturn(dada){
          var jsonarrdada = Array();
           for (i in dada){
               if(Array.isArray(dada[i])){
+                  console.log('"'+i+'":' + JSON.stringify(dada[i]))
                   jsonarrdada.push('"'+i+'":' + JSON.stringify(dada[i]))
                   for(j in dada[i]){
-                      console.log('"'+j+'"' + ' : '+dada[i][j])
+                      //console.log('"'+j+'"' + ' : '+dada[i][j])
                   }
               }
               else{
-            jsonarrdada.push('"'+i+'":"'+dada[i]+'"'); 
+            jsonarrdada.push('"'+i+'":"'+dada[i]+'"');
+            console.log('"'+i+'":"'+dada[i]+'"');
               }
           }
 
   var data = '{'+jsonarrdada.join(',')+'}';
-  console.log("data: "+data)
+  //console.log("data: "+data)
   objdata = JSON.parse(data)
 
   for(i in objdata){
    if(Array.isArray(objdata[i])){
       for( k in objdata[i]){
-       console.log(i+k+':'+objdata[i][k])
+       //console.log(i+k+':'+objdata[i][k])
       }
    }else{
-          console.log(i+':'+objdata[i])
+         // console.log(i+':'+objdata[i])
       }
   }
 };

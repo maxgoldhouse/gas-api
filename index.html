@@ -34,10 +34,10 @@ function onreturn(dada){
          var jsonarrdada = Array();
           for (i in dada){
 
-              if(dada[i].length > 1){
-                  console.log('x : '+dada[i].length)
+              if(Array.isArray(dada[i])){
+                  //console.log('x : '+dada[i].length)
                   jsonarrdada.push('"'+i+'":'+JSON.stringify(dada[i].split(',')))
-                  console.log('"'+i+'":'+JSON.stringify(dada[i].split(',')))
+                  //console.log('"'+i+'":'+JSON.stringify(dada[i].split(',')))
               }
               else{
                jsonarrdada.push('"'+i+'":"'+dada[i]+'"');

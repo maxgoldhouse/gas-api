@@ -32,13 +32,16 @@ Last name:<br>
 function onreturn(dada){
         document.getElementById("results").innerHTML = JSON.stringify(dada)//dada.joinList + ' : ' + dada.joinDrip + ' : ' + dada.milestoneOn
          var jsonarrdada = Array();
+         var subjsonarrdada = Array();
           for (i in dada){
+              subjsonarrdada = []
               if(Array.isArray(dada[i])){
-                  console.log('"'+i+'":' + JSON.stringify(dada[i]))
-                  jsonarrdada.push('"'+i+'":' + JSON.stringify(dada[i]))
                   for(j in dada[i]){
                       //console.log('"'+j+'"' + ' : '+dada[i][j])
+                      subjsonarrdada.push('"'=dada[i][j]+'"')
                   }
+                  jsonarrdada.push('"'+i+'":['+subjsonarrdada.join(',')+']')
+                  console.log('"'+i+'":['+subjsonarrdada.join(',')+']')
               }
               else{
             jsonarrdada.push('"'+i+'":"'+dada[i]+'"');

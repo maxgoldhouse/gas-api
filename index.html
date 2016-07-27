@@ -48,9 +48,13 @@ Last name:<br>
   console.log("data: "+data)
   objdata = JSON.parse(data)
   //for( k in objdata.interests.milestoneOn){
-  for( k in objdata.milestoneOn){
-  //console.log(k+':'+objdata.interests.milestoneOn[k])
-   console.log(k+':'+objdata.milestoneOn[k])
+  for(i in objdata){
+   if(if Array.isArray(objdata[i])){
+      for( k in objdata[i]){
+      //console.log(k+':'+objdata.interests.milestoneOn[k])
+       console.log(k+':'+objdata.[i]][k])
+      }
+   }
   }
     };
 

@@ -41,7 +41,7 @@ function onreturn(dada){
                       subjsonarrdada.push('"'+dada[i][j]+'"')
                   }
                   jsonarrdada.push('"'+i+'":['+subjsonarrdada.join(',')+']')
-                  console.log('"'+i+'":['+subjsonarrdada.join(',')+']')
+                  console.log('"'+i+'":['+JSON.stringify(subjsonarrdada.join(','))+']')
               }
               else{
             jsonarrdada.push('"'+i+'":"'+dada[i]+'"');

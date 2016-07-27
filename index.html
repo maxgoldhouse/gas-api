@@ -32,10 +32,9 @@ Last name:<br>
 function onreturn(dada){
         document.getElementById("results").innerHTML = JSON.stringify(dada)//dada.joinList + ' : ' + dada.joinDrip + ' : ' + dada.milestoneOn
          var jsonarrdada = Array();
-         var stringdada = ""
           for (i in dada){
-              stringdada = dada[i].toString
-              if(stringdada.indexOf(',') > -1){
+
+              if(dada[i].indexOf(',') > -1){
                   console.log('x : '+dada[i])
                   jsonarrdada.push('"'+i+'":'+JSON.stringify(dada[i].split(',')))
                   console.log('"'+i+'":'+JSON.stringify(dada[i].split(',')))

@@ -24,25 +24,20 @@ Last name:<br>
 <div id="techsmith-snagitchrome-extension"></div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 <script>
-    function onreturn(dada){
-        //var returnedjson = JSON.parse(dada);
-        
+function onreturn(dada){
         document.getElementById("results").innerHTML = JSON.stringify(dada)//dada.joinList + ' : ' + dada.joinDrip + ' : ' + dada.milestoneOn
-        //dada = JSON.parse(dada)
          var jsonarrdada = Array();
-         //var arrstr
-  for (i in dada){
-      if(Array.isArray(dada[i])){
-          jsonarrdada.push('"'+i+'":' + JSON.stringify(dada[i]))
-          for(j in dada[i]){
-              console.log('"'+j+'"' + ' : '+dada[i][j])
-              //jsonarrdada.push('"'+j+'"' + ' : '+dada[i][j]);
+          for (i in dada){
+              if(Array.isArray(dada[i])){
+                  jsonarrdada.push('"'+i+'":' + JSON.stringify(dada[i]))
+                  for(j in dada[i]){
+                      console.log('"'+j+'"' + ' : '+dada[i][j])
+                  }
+              }
+              else{
+            jsonarrdada.push('"'+i+'":"'+dada[i]+'"'); 
+              }
           }
-      }
-      else{
-    jsonarrdada.push('"'+i+'":"'+dada[i]+'"'); 
-      }
-  }
 
   var data = '{'+jsonarrdada.join(',')+'}';
   console.log("data: "+data)
@@ -55,7 +50,7 @@ Last name:<br>
       }
    }
   }
-    };
+};
 
     $.fn.serializeObject = function()
           {

@@ -85,7 +85,6 @@ function onreturn(dada){
 function serializeForm(theform){    
         var data = {};
         var inputs = [].slice.call(theform.target.getElementsByTagName('input'));
-        console.log('wee : '+JSON.stringify(inputs.join()));
         inputs.forEach(input => {
           data[input.name] = input.value;
         });
@@ -94,7 +93,7 @@ function serializeForm(theform){
     
     
     document.querySelector("#apisform").addEventListener("submit", function(e){
-      var thedata = JSON.stringify(serializeForm(e))
+      var thedata = JSON.stringify(serialize(e))
       console.log('The Data = '+thedata)
       var script = document.createElement('script');
       script.src = 'https://script.google.com/macros/s/AKfycbzCW2_f0QrC3qq3KG_-GGcg_msIpHGyOPz9izaqtLGxbLMFbPk/exec?from=webform&data='+thedata;
@@ -102,6 +101,27 @@ function serializeForm(theform){
       e.preventDefault();
       return false;
     })
+    
+    function serialize(form) {
+    var field, s = [];
+    if (typeof form == 'object' && form.nodeName == "FORM") {
+        var len = form.elements.length;
+        for (i=0; i<len; i++) {
+            field = form.elements[i];
+            if (field.name && !field.disabled && field.type != 'file' && field.type != 'reset' && field.type != 'submit' && field.type != 'button') {
+                if (field.type == 'select-multiple') {
+                    for (j=form.elements[i].options.length-1; j>=0; j--) {
+                        if(field.options[j].selected)
+                            s[s.length] = encodeURIComponent(field.name) + "=" + encodeURIComponent(field.options[j].value);
+                    }
+                } else if ((field.type != 'checkbox' && field.type != 'radio') || field.checked) {
+                    s[s.length] = encodeURIComponent(field.name) + "=" + encodeURIComponent(field.value);
+                }
+            }
+        }
+    }
+    return s.join('&').replace(/%20/g, '+');
+}
 
 
 </script>

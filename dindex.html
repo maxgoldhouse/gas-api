@@ -3,7 +3,7 @@
 </head>
 <body>
     
-<form accept-charset="UTF-8" action="" method="">
+<form id="apisform" accept-charset="UTF-8" action="" method="">
 First name:<br>
 <input type="text" name="firstname"><br>
 Last name:<br>
@@ -80,7 +80,7 @@ function onreturn(dada){
     });
     });
 */
-    document.querySelector("form").addEventListener("submit", function(e){
+    document.querySelector("#apisform").addEventListener("submit", function(e){
       var thedata = JSON.stringify(e.serializeObject())
       console.log('The Data = '+thedata)
       var script = document.createElement('script');

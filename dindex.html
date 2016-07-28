@@ -83,13 +83,13 @@ function onreturn(dada){
     
 */
 function serializeForm(theform){    
-    var data = {};
-var inputs = [].slice.call(theform.target.getElementsByTagName('input'));
-console.log('wee : '+JSON.stringify(inputs));
-inputs.forEach(input => {
-  data[input.name] = input.value;
-});
-return data
+        var data = {};
+        var inputs = [].slice.call(theform.target.getElementsByTagName('input'));
+        console.log('wee : '+JSON.stringify(inputs.join()));
+        inputs.forEach(input => {
+          data[input.name] = input.value;
+        });
+        return data
 }
     
     

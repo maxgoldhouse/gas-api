@@ -92,6 +92,18 @@ function serializeForm(theform){
             data[input.name] = input.value;
         }
         });
+         var jsonarrdada = Array();
+
+          for (i in data){
+              if(data[i].indexOf(',')){
+                  jsonarrdada.push('"'+i+'":'+JSON.stringify(data[i]))
+              }
+              else{
+               jsonarrdada.push('"'+i+'":"'+data[i]+'"');
+              }
+          }
+
+  var data = '{'+jsonarrdada.join(',')+'}';
         return data
 }
     

@@ -1,0 +1,82 @@
+<html><head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+</head>
+<body>
+    
+<form accept-charset="UTF-8" action="" method="">
+First name:<br>
+<input type="text" name="firstname"><br>
+Last name:<br>
+<input type="text" name="lastname">
+<input type="hidden" name="email" value="dindi@dindi.net">
+ 
+<input type="hidden" name="joinList" value="BlackBox">
+  <input type="hidden" name="joinDrip" value="Welcome">
+  <input type="hidden" name="joinDrip" value="E-marketing">  
+  <input type="hidden" name="milestoneOff" value="1st Visit">
+  <input type="hidden" name="milestoneOn" value="1st Drip">
+  <input type="hidden" name="milestoneOn" value="Ebook">
+  <input type="hidden" name="interestOn" value="New Website">
+  <input type="hidden" name="interestOn" value="Email Marketing">
+  <input type="hidden" name="interestOff" value="Social Media">
+  <input type="hidden" name="from" value="webform">
+<input type="submit" name="send" value="Send This Stuff">
+</form>
+
+<div id="returned"> </div>
+<div id="results"></div>
+
+<div id="techsmith-snagitchrome-extension"></div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script>
+function onreturn(dada){
+        document.getElementById("results").innerHTML = JSON.stringify(dada)//dada.joinList + ' : ' + dada.joinDrip + ' : ' + dada.milestoneOn
+         var jsonarrdada = Array();
+
+          for (i in dada){
+              if(dada[i].indexOf(',')){
+                  jsonarrdada.push('"'+i+'":'+JSON.stringify(dada[i]))
+              }
+              else{
+               jsonarrdada.push('"'+i+'":"'+dada[i]+'"');
+              }
+          }
+
+  var data = '{'+jsonarrdada.join(',')+'}';
+  console.log("returned data: "+data)
+  objdata = JSON.parse(data)
+};
+
+    $.fn.serializeObject = function()
+          {
+            var o = {};
+            var a = this.serializeArray();
+            $.each(a, function() {
+              if (o[this.name] !== undefined) {
+                if (!o[this.name].push) {
+                  o[this.name] = [o[this.name]];
+                }
+                o[this.name].push(this.value || '');
+              } else {
+                o[this.name] = this.value || '';
+              }
+            });
+            o['url'] = location.protocol + '//' + location.host + location.pathname;
+            return o;
+    };
+
+    $('form').submit(function() {
+            var thedata = JSON.stringify($(this).serializeObject())
+            console.log('The Data = '+thedata)
+
+        $.ajax({
+          url: 'https://script.google.com/macros/s/AKfycbzCW2_f0QrC3qq3KG_-GGcg_msIpHGyOPz9izaqtLGxbLMFbPk/exec?from=webform&data='+thedata,
+          dataType: "jsonp",
+          jsonpCallback: "onreturn"
+        });
+
+     return false;
+    });
+</script>
+
+</body></html>

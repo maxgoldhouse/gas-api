@@ -86,7 +86,7 @@ function serializeForm(theform){
         var data = {};
         var inputs = [].slice.call(theform.target.getElementsByTagName('input'));
         inputs.forEach(input => {
-        if(data[input.name].length > 0){    
+        if(data[input.name]){    
           data[input.name] = data[input.name]+','+input.value;
         }else{
             data[input.name] = input.value;

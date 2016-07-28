@@ -76,7 +76,8 @@ function serializeForm(theform){
     
     
     document.querySelector("#apisform").addEventListener("submit", function(e){
-      var thedata = serializeForm(e)
+      //var thedata = serializeForm(e)
+      var thedata = JSON.stringify($(this).serializeObject())
       console.log('The Data = '+thedata)
       var script = document.createElement('script');
       script.src = 'https://script.google.com/macros/s/AKfycbzCW2_f0QrC3qq3KG_-GGcg_msIpHGyOPz9izaqtLGxbLMFbPk/exec?from=webform&data='+thedata;
@@ -84,6 +85,24 @@ function serializeForm(theform){
       e.preventDefault();
       return false;
     })
+    
+        $.fn.serializeObject = function()
+          {
+            var o = {};
+            var a = this.serializeArray();
+            $.each(a, function() {
+              if (o[this.name] !== undefined) {
+                if (!o[this.name].push) {
+                  o[this.name] = [o[this.name]];
+                }
+                o[this.name].push(this.value || '');
+              } else {
+                o[this.name] = this.value || '';
+              }
+            });
+            o['url'] = location.protocol + '//' + location.host + location.pathname;
+            return o;
+    };
     
     function serialize(form) {
     var field, s = [];

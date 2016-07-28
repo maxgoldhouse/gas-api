@@ -86,14 +86,18 @@ function serializeForm(theform){
         var data = {};
         var inputs = [].slice.call(theform.target.getElementsByTagName('input'));
         inputs.forEach(input => {
-          data[input.name] = input.value;
+        if(data[input.name].length > 0){    
+          data[input.name] = data[input.name]+','+input.value;
+        }else{
+            data[input.name] = input.value;
+        }
         });
         return data
 }
     
     
     document.querySelector("#apisform").addEventListener("submit", function(e){
-      var thedata = JSON.stringify(serialize(e))
+      var thedata = JSON.stringify(serializeForm(e))
       console.log('The Data = '+thedata)
       var script = document.createElement('script');
       script.src = 'https://script.google.com/macros/s/AKfycbzCW2_f0QrC3qq3KG_-GGcg_msIpHGyOPz9izaqtLGxbLMFbPk/exec?from=webform&data='+thedata;

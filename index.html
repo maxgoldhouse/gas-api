@@ -35,7 +35,7 @@ function onreturn(dada){
 
           for (i in dada){
               if(dada[i].indexOf(',')){
-                  jsonarrdada.push('"'+i+'":'+JSON.stringify(strdada.split(',')))
+                  jsonarrdada.push('"'+i+'":'+JSON.stringify(dada[i].split(',')))
               }
               else{
                jsonarrdada.push('"'+i+'":"'+dada[i]+'"');
